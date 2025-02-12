@@ -1,1 +1,0 @@
-# nowruz-counter
