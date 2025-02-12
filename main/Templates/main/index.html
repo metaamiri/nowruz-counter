@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شمارش معکوس تا نوروز</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 50px;
+        }
+        .counter {
+            font-size: 2rem;
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        span {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>تا تحویل سال چقدر باقی مانده؟</h1>
+    <div class="counter" style="display: inline-flexbox;">
+        <div><span id="days">{{ days }}</span> روز</div>
+        <div><span id="hours">{{ hours }}</span> ساعت</div>
+        <div><span id="minutes">{{ minutes }}</span> دقیقه</div>
+        <div><span id="seconds">{{ seconds }}</span> ثانیه</div>
+    </div>
+
+    <script>
+        // مقدار اولیه از سرور دریافت شده است
+        let days = parseInt("{{ days }}");
+        let hours = parseInt("{{ hours }}");
+        let minutes = parseInt("{{ minutes }}");
+        let seconds = parseInt("{{ seconds }}");
+
+        function updateCounter() {
+            if (seconds > 0) {
+                seconds--;
+            } else {
+                if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                } else if (days > 0) {
+                    days--;
+                    hours = 23;
+                    minutes = 59;
+                    seconds = 59;
+                }
+            }
+
+            // آپدیت مقدار در HTML
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        // اجرای تابع هر ۱۰۰۰ میلی‌ثانیه (۱ ثانیه)
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
