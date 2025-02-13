@@ -13,4 +13,12 @@ after you downloaded the project, go to the project folder and open terminal in 
 python manage.py runserver
 ```
 Then go to the browser and enter the url http://127.0.0.1:8000/
-![Screenshot of output.](https://myoctocat.com/assets/images/base-octocat.svg)
+
+# Output
+the output should be like this
+
+![Screenshot of output.](https://github.com/metaamiri/nowruz-counter/blob/main/main/Templates/screenshot/Screenshot.png)
+
+> [!NOTE]
+> Numbers represent how much time left to the new year
+
