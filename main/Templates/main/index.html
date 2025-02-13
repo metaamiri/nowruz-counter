@@ -9,12 +9,26 @@
     <link rel="stylesheet" href="{%static 'main/style.css'%}">
 </head>
 <body>
-    <h1  class="farsi-number" >نوروز 1404</h1>
-    <div class="counter" style="display: inline-flexbox;">
-        <div><span class="farsi-number" id="days">{{ days }}</span> روز</div>
-        <div><span class="farsi-number" id="hours">{{ hours }}</span> ساعت</div>
-        <div><span class="farsi-number" id="minutes">{{ minutes }}</span> دقیقه</div>
-        <div><span class="farsi-number" id="seconds">{{ seconds }}</span> ثانیه</div>
+    <div class="countdown-container">
+        <h1 class="farsi-number">نوروز 1404</h1>
+        <div class="countdown">
+            <div class="time-box">
+                <span class="countdown-number farsi-number" id="seconds">{{ seconds }}</span>
+                <span class="label">ثانیه</span>
+            </div>
+            <div class="time-box">
+                <span class="countdown-number farsi-number" id="minutes">{{ minutes }}</span>
+                <span class="label">دقیقه</span>
+            </div>
+            <div class="time-box">
+                <span class="countdown-number farsi-number" id="hours">{{ hours }}</span>
+                <span class="label">ساعت</span>
+            </div>
+            <div class="time-box">
+                <span class="countdown-number farsi-number" id="days">{{ days }}</span>
+                <span class="label">روز</span>
+            </div>
+        </div>
     </div>
 
     <script>

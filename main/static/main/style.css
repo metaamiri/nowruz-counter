@@ -41,21 +41,54 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
-    font-family: sans-serif;
-    direction: rtl;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;;
+    font-family: 'vazir', sans-serif;
     text-align: center;
-    background-color: #f8f9fa;
-    margin: 50px;
+    direction: rtl;
+    color: white;
 }
-.counter {
-    font-size: 2rem;
-    background: white;
+.countdown-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transform: translateY(-150px);  /* مقدار منفی یعنی بالا بردن */
+
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    width: 100px;
 }
-span {
+
+.countdown-number {
+    font-size: 36px;
     font-weight: bold;
-    color: #007bff;
+    display: block;
+}
+
+.label {
+    font-size: 16px;
+    margin-top: 5px;
 }
